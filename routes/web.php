@@ -22,11 +22,24 @@ Route::prefix('admin')->group(function () {
 
     Route::resource('categories', 'CategoriesController');
     Route::get('categories/{id}/destroy', 'CategoriesController@destroy')->name('categories.destroy');
+
 });
+
+Auth::routes();
+
+Route::get('/inicio', 'HomeController@index')->name('inicio');
+
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
+
+
 
 
 // Route::group(['prefix' => 'admin'], function () {
 //     Route::resource('users', 'UserController');
 // });
+
 
 
