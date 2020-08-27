@@ -21,7 +21,7 @@ class Admin
             return $next($request);
 
         }else {
-            return "no eres administrador";
+            abort(401);
         }
         // dd(Auth::user()->type);
     }
