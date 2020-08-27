@@ -5,7 +5,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
 
-                <a class="navbar-brand nav-item-color" href="{{ route('welcome') }}">Blogeate</a>
+                <a class="navbar-brand nav-item-color" href="{{ route('welcome') }}">Blogee</a>
 
                 @if (Auth::check())
 
