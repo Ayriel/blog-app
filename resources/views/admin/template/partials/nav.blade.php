@@ -5,7 +5,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
 
-                <a class="navbar-brand nav-item-color" href="{{ route('welcome') }}">Blog</a>
+                <a class="navbar-brand nav-item-color" href="{{ route('welcome') }}">Blogeate</a>
 
                 @if (Auth::check())
 
@@ -14,9 +14,12 @@
                     <li class="nav-item ">
                         <a class="nav-link nav-item-color hoverExten" href="{{ route('inicio') }}" tabindex="-1">Inicio</a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link nav-item-color hoverExten" href="{{ route('users.index') }}" tabindex="-1">Usuarios</a>
-                    </li>
+                    @if (Auth::user()->type ==="admin")
+                        <li class="nav-item ">
+                            <a class="nav-link nav-item-color hoverExten" href="{{ route('users.index') }}" tabindex="-1">Usuarios</a>
+                        </li>
+                    @endif
+
 
                     <li class="nav-item ">
                         <a class="nav-link nav-item-color hoverExten" href="{{ route('categories.index') }}" tabindex="-1" >Categorias</a>
