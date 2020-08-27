@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('type', 'Tipo') !!}
-            {!! Form::select('type', ['member' => 'Miembro', 'admin' => 'Administrador'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione..']) !!}
+            {!! Form::select('type', ['member' => 'Miembro', 'admin' => 'Administrador'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione..', 'required']) !!}
            <h6> {{ $errors->first('type') }}</h6>
         </div>
         <div class="form-group">

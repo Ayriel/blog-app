@@ -4,8 +4,9 @@
 
 @section('content')
 
-
-<a href="{{ route('users.create') }}" class="btn btn-info">Registrar nuevo usuario</a>
+<div class="buttom mt-3">
+    <a  href="{{ route('users.create') }}" class="btn btn-info">Registrar nuevo usuario</a>
+</div>
 <table class="table">
     <thead>
       <tr>
@@ -32,7 +33,7 @@
 
                 </td>
                 <td>
-                    <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-danger">
+                    <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-danger" onclick="">
                         {{-- <div class="icon-holder"> --}}
                             <div class="icon">
                                 <i class="icofont-ui-delete">
@@ -53,5 +54,6 @@
         @endforeach
     </tbody>
   </table>
+  <hr>
    {!! $users->render() !!} {{-- para que funciones la paginación --}}
 @endsection

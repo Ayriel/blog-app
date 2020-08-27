@@ -4,9 +4,10 @@
 
 @section('content')
 
+<div class="buttom mt-3">
+    <a href="{{ route('categories.create') }}" class="btn btn-info">Registrar nueva categoria</a>
+</div>
 
-
-<a href="{{ route('categories.create') }}" class="btn btn-info">Registrar nueva categoria</a>
 <table class="table">
     <thead>
       <tr>

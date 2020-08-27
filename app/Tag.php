@@ -15,4 +15,15 @@ class Tag extends Model
 
         return $this->belongsToMany('App\Article')->withTimestamps();
     }
+    // Configuración de scope para el tag name
+    public function scopeSearch($query, $name)
+    {
+        return $query->where('name', 'LIKE', "%$name%");
+    }
+
+    // SCOPE
+    public function scopeSearchTag($query, $name){
+        return $query->where('name', '=', $name);
+    }
+
 }
