@@ -16,6 +16,10 @@ body {
     margin-bottom: 0;
 }
 
+.min-vh {
+    min-height: 75vh    ;
+}
+
 .card-image {
     min-width: 197px !important;
 }
@@ -266,12 +270,7 @@ body {
 
 .aside .box h2:before {
     content: '\/\/';
-    top: 0px;
-    letter-spacing: -4px;
-    font-weight: 300;
-    position: relative;
-    margin: 0 12px 0 0;
-    /* font-family: sans-serif; */
+
 }
 
 .aside .categories, .aside .tags {
@@ -321,3 +320,18 @@ body {
 .table {
     text-align: center
 }
+
+.card-head{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+.card-head h3::before {
+    content: '\/\/';
+}
+

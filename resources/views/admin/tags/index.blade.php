@@ -55,6 +55,9 @@
         @endforeach
     </tbody>
   </table>
-   {!! $tag->render() !!} {{-- para que funciones la paginación --}}
 
+  <div class="pagination">
+
+   {!! $tag->render() !!} {{-- para que funciones la paginación --}}
+  </div>
 @endsection

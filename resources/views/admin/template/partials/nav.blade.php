@@ -9,32 +9,32 @@
 
                 @if (Auth::check())
 
-                <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto">
 
-                    <li class="nav-item ">
-                        <a class="nav-link nav-item-color hoverExten" href="{{ route('inicio') }}" tabindex="-1">Inicio</a>
-                    </li>
-                    @if (Auth::user()->type ==="admin")
                         <li class="nav-item ">
-                            <a class="nav-link nav-item-color hoverExten" href="{{ route('users.index') }}" tabindex="-1">Usuarios</a>
+                            <a class="nav-link nav-item-color hoverExten" href="{{ route('inicio') }}" tabindex="-1">Inicio</a>
                         </li>
-                    @endif
+                        @if (Auth::user()->type ==="admin")
+                            <li class="nav-item ">
+                                <a class="nav-link nav-item-color hoverExten" href="{{ route('users.index') }}" tabindex="-1">Usuarios</a>
+                            </li>
+                        @endif
 
 
-                    <li class="nav-item ">
-                        <a class="nav-link nav-item-color hoverExten" href="{{ route('categories.index') }}" tabindex="-1" >Categorias</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link nav-item-color hoverExten" href="{{ route('articles.index') }}" tabindex="-1" >Articulos</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link nav-item-color hoverExten" href="{{ route('images.index') }}" tabindex="-1" >Imagenes</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link nav-item-color hoverExten" href="{{ route('tags.index') }}" tabindex="-1" >Tags</a>
-                    </li>
+                        <li class="nav-item ">
+                            <a class="nav-link nav-item-color hoverExten" href="{{ route('categories.index') }}" tabindex="-1" >Categorias</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link nav-item-color hoverExten" href="{{ route('articles.index') }}" tabindex="-1" >Articulos</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link nav-item-color hoverExten" href="{{ route('images.index') }}" tabindex="-1" >Imagenes</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link nav-item-color hoverExten" href="{{ route('tags.index') }}" tabindex="-1" >Tags</a>
+                        </li>
 
-                </ul>
+                    </ul>
 
                 @endif
 
@@ -57,7 +57,7 @@
                                 <span class="text-info font-weight-bold text-uppercase">   {{ Auth::user()->name }} </span>
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">

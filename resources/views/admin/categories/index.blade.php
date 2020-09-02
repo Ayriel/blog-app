@@ -43,6 +43,8 @@
         @endforeach
     </tbody>
   </table>
-   {!! $categories->render() !!} {{-- para que funciones la paginación --}}
+  <div class="pagination">
 
+   {!! $categories->render() !!} {{-- para que funciones la paginación --}}
+  </div>
 @endsection

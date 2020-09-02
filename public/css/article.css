@@ -27,11 +27,16 @@
 .coment-title {
     font-family: 'Roboto Slab', serif;
     font-size: 25px;
+    font-weight: 500;
+
 }
 
 .coment-title:before {
     content: '\/\/';
+    /* content: ' }'; */
 }
+
+
 
 .drop-cap:first-letter {
     font-size: 3rem;

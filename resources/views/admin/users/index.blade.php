@@ -55,5 +55,7 @@
     </tbody>
   </table>
   <hr>
+  <div class="pagination">
    {!! $users->render() !!} {{-- para que funciones la paginación --}}
+  </div>
 @endsection

@@ -1,10 +1,10 @@
 @extends('admin.template.main')
 
-@section('title', 'Lista de images')
+@section('title', 'Lista de imagenes')
 
 @section('images')
-    <div class="row">
-        <div class="col-md-6 mx-auto card-columns">
+    <div class="row pt-3 pb-2">
+        <div class="col-md-7 mx-auto card-columns">
         {{-- <div class="image-container d-flex"> --}}
 
             @foreach ($images as $image)

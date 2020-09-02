@@ -14,29 +14,30 @@
     <title>@yield('title', 'Default') | Panel admin</title>
 </head>
 <body>
-
-<section>
     <header>
         @include('admin.template.partials.nav')
 
     </header>
-    <div class="container-fluid">
 
-            <div class="row mt-2">
-                <div class="col-md-7 mx-auto">
-                    <div class="card">
+<main>
+
+    {{-- BODY --}}
+    <div class="container-fluid min-vh">
+
+            <div class="row mt-2 min-vh">
+                <div class="col-md-7 mx-auto ">
+                    <div class="card-main">
 
                         @section('det')
-                            <div class="card-header">
+                            <div class="card-head">
                                 @include('flash::message')
-                                <h4>
+                                <h3>
                                     @yield('title', 'Default')
-                                </h4>
+                                </h3>
                             </div>
                         @show
 
                         @yield('content')
-
 
                     </div>
 
@@ -45,14 +46,9 @@
 
             </div>
 
-
-        {{-- @yield('welcome') --}}
-
     </div>
 
-
-
-</section>
+</main>
 
 
 

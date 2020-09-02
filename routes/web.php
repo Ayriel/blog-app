@@ -26,6 +26,8 @@ Route::get('tags/{name}', 'FrontController@searchTag')->name('search.tags');
 Route::get('articles/{slug}', 'FrontController@viewArticle')->name('view.article');;
 
 
+Route::view('/test', 'test');
+
 
 // Rutas del panel de admin
 
