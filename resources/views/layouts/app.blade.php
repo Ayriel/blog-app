@@ -21,6 +21,9 @@
     <link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ asset('css/menulogin.css') }}">
+
+
 </head>
 <body>
     <div id="app">

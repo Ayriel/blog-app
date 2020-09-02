@@ -42,13 +42,41 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link nav-item-color" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
+                        </li> --}}
                         @if (Route::has('register'))
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link nav-item-color" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li> --}}
+
+
+                            <li class="nav-item">
+                                <a id="boton" href="#">
+                                    Iniciar sesión
+                                </a>
+                                    <div id="panel" >
+                                         <div class="container">
+                                             <div class="row">
+
+                                                <div class="col-6  panel-colum col-der">
+                                                    <h3 class="panel-title">Usuarios registrados</h3>
+                                                    <p class="text-muted">¿Tienes una cuenta? inicia sesión ahora</p>
+                                                    <a type="button" href="{{ route('login') }}" class="btn btn-outline-secondary btn-modifi btn-out-1">{{ __('Login') }}</a>
+
+                                                </div>
+                                                <div class="col-6  panel-colum">
+                                                    <h3 class="panel-title">Usuarios registrados</h3>
+                                                    <p class="text-muted">¿Eres nuevo aqui? Crea una cuenta para comenzar bloguear</p>
+                                                    <a href="{{ route('register') }}" class="btn btn-outline-secondary btn-modifi "><span>{{ __('Register') }}</span></a>
+
+                                                </div>
+                                            </div>
+                                         </div>
+                                    </div>
+
                             </li>
+
                         @endif
                     @else
 
@@ -71,7 +99,20 @@
                         </li>
                     @endguest
                 </ul>
+
+
             </div>
         </div>
     </nav>
+{{--
+    <div class="">
+        <div class="row">
+            <div class="col-md-6 borde prueba">
+                <h4>prueba</h4>
+                <h4>prueba</h4>
+            </div>
+        </div>
+
+
+    </div> --}}
 </div>

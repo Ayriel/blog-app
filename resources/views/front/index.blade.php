@@ -21,17 +21,63 @@
             @include('flash::message')
 
             <!-- Standard post -->
-
             @foreach ($articles as $article)
-                {{-- {{ dd($article) }} --}}
+                {{-- {{ dd($article->images) }} --}}
+                {{-- {{ dd(count($article->images)) }} --}}
+
                 <article class="article">
                     <div class="article-image">
                         <a href="{{ route('view.article', $article->slug) }}" title="#">
-                            @foreach ($article->images  as $image)
+                            {{-- @foreach ($article->images  as $image) --}}
 
-                                <img src="{{ asset('images/articles/'. $image->name) }}" alt="#"class="img-responsive article-image-mod">
+                            <div id="carouselExampleControls{{ $article->title }}" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
 
-                            @endforeach
+                                            @foreach ($article->images   as $key => $image)
+                                                    {{-- {{ dd($key) }} --}}
+                                                @if ($key == 0)
+
+                                                    <div class="carousel-item active">
+                                                        {{-- <img class="d-block w-100" src="..." alt="First slide"> --}}
+                                                        <img src="{{ asset('images/articles/'. $image->name) }}" alt="#" class="img-responsive article-image-mod d-block w-100 ">
+
+                                                    </div>
+
+                                                @endif
+
+                                                @if($key > 0)
+                                                    <div class="carousel-item">
+                                                        {{-- <img class="d-block w-100" src="..." alt="First slide"> --}}
+                                                        <img src="{{ asset('images/articles/'. $image->name) }}" alt="#" class="img-responsive article-image-mod d-block w-100 ">
+
+                                                    </div>
+                                                @endif
+
+
+
+                                            @endforeach
+
+                                        {{-- <div class="carousel-item">
+                                            <img class="d-block w-100" src="..." alt="Second slide">
+                                        </div> --}}
+                                </div>
+                                @if (count($article->images) > 1)
+
+
+                                        <a class="carousel-control-prev" href="#carouselExampleControls{{ $article->title }}" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleControls{{ $article->title }}" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                @endif
+                            </div>
+
+                                {{-- <img src="{{ asset('images/articles/'. $image->name) }}" alt="#"class="img-responsive article-image-mod"> --}}
+
+                            {{-- @endforeach --}}
                         </a>
                     </div>
                     <div class="article-box box">

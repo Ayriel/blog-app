@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/iconfont/icofont.min.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+
+    {{-- <link rel="stylesheet" href="{{ asset('css/menulogin.css') }}"> --}}
+
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
 
