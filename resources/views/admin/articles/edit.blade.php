@@ -22,7 +22,7 @@
 
     <div class="form-group">
         {!! Form::label('content', 'Contenido') !!}
-        {!! Form::textarea('content',$article->content, ['class' => 'form-control', 'placeholder' => 'Contenido...', 'required']) !!}
+        {!! Form::textarea('content',$article->content, ['class' => 'form-control trumbowyg', 'placeholder' => 'Contenido...', 'required']) !!}
         <h6> {{ $errors->first('content') }}</h6>
 
     </div>

@@ -22,42 +22,87 @@
                 <article class="article">
                     <div class="article-image">
                         {{-- <a href="#" title="#"> --}}
-                            @foreach ($article->images  as $image)
+
+                            <div id="carouselExampleControls{{ $article->title }}" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+
+                                            @foreach ($article->images   as $key => $image)
+                                                    {{-- {{ dd($key) }} --}}
+                                                @if ($key == 0)
+
+                                                    <div class="carousel-item active">
+                                                        {{-- <img class="d-block w-100" src="..." alt="First slide"> --}}
+                                                        <img src="{{ asset('images/articles/'. $image->name) }}" alt="#" class="img-responsive article-image-mod d-block w-100 ">
+
+                                                    </div>
+
+                                                @endif
+
+                                                @if($key > 0)
+                                                    <div class="carousel-item">
+                                                        {{-- <img class="d-block w-100" src="..." alt="First slide"> --}}
+                                                        <img src="{{ asset('images/articles/'. $image->name) }}" alt="#" class="img-responsive article-image-mod d-block w-100 ">
+
+                                                    </div>
+                                                @endif
+
+
+
+                                            @endforeach
+
+                                        {{-- <div class="carousel-item">
+                                            <img class="d-block w-100" src="..." alt="Second slide">
+                                        </div> --}}
+                                </div>
+                                @if (count($article->images) > 1)
+
+
+                                        <a class="carousel-control-prev" href="#carouselExampleControls{{ $article->title }}" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleControls{{ $article->title }}" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                @endif
+                            </div>
+                            {{-- @foreach ($article->images  as $image)
 
                                 <img src="{{ asset('images/articles/'. $image->name) }}" alt="#"class="img-responsive article-image-mod">
 
-                            @endforeach
+                            @endforeach --}}
                         {{-- </a> --}}
                     </div>
                     <div class="article-box box">
-                        <h3 class="box-title">
-                            <div class="title" href="#" title="#">{{ $article->title }}</div>
-                        </h3>
-                        <div class="info">
-                            <div>
-                                <span class="date">March 26, <span data-current-year></span></span>
-                            </div>
-                            <div>{{ $article->created_at->diffForHumans() }}</div>
-                        </div>
-                        <p class="description drop-cap">
-                            {{ $article->content }}
-                            {{-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan eleifend magna. Curabitur scelerisque vitae augue ac dignissim. Aliquam erat volutpat. Proin in ultricies ligula. Etiam rutrum porta lacus in posuere. vel tortor tempor risus ultricies
-                            bibendum... --}}
-                        </p>
-
-
-                        <footer class="article-footer">
-                            <div class="row ">
-                                <div class="col-sm-12 col-lg-6 tags">
-                                        <a href="#" title="#">{{ $article->category->name . ' -- ' }}</a>
-                                        @foreach ($article->tags as $item)
-                                      {{-- {{  dd($article->tag)}} --}}
-                                            <a href="#" title="#">#{{ $item->name }}</a>
-                                        @endforeach
+                            <h3 class="box-title">
+                                <div class="title" href="#" title="#">{{ $article->title }}</div>
+                            </h3>
+                            <div class="info">
+                                <div>
+                                    <span class="date">March 26, <span data-current-year></span></span>
                                 </div>
-
+                                <div>{{ $article->created_at->diffForHumans() }}</div>
                             </div>
-                        </footer>
+                            <p class="description drop-cap">
+                                {{ $article->content }}
+                                {{-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan eleifend magna. Curabitur scelerisque vitae augue ac dignissim. Aliquam erat volutpat. Proin in ultricies ligula. Etiam rutrum porta lacus in posuere. vel tortor tempor risus ultricies
+                                bibendum... --}}
+                            </p>
+
+
+                            <footer class="article-footer">
+                                <div class="row ">
+                                    <div class="col-sm-12 col-lg-6 tags">
+                                            <a href="#" title="#">{{ $article->category->name . ' -- ' }}</a>
+                                            @foreach ($article->tags as $item)
+                                        {{-- {{  dd($article->tag)}} --}}
+                                                <a href="#" title="#">#{{ $item->name }}</a>
+                                            @endforeach
+                                    </div>
+
+                                </div>
+                            </footer>
 
 
                     </div>
@@ -65,7 +110,7 @@
 
 
                         {{-- START COMMENTS --}}
-                        <div class="comentarios box">
+                    <div class="comentarios box">
                         <h3 class="coment-title">Comentarios</h3>
 
 

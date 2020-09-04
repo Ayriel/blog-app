@@ -90,11 +90,17 @@
                             </div>
                             <div>{{ $article->created_at->diffForHumans() }}</div>
                         </div>
-                        <p class="description">
-                            {{ $article->content }}
+                        <p class="description-1" style="display: none">
+                            {{-- {{ dd($article->content) }} --}}
+                            {{ $article->content  }}
                             {{-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan eleifend magna. Curabitur scelerisque vitae augue ac dignissim. Aliquam erat volutpat. Proin in ultricies ligula. Etiam rutrum porta lacus in posuere. vel tortor tempor risus ultricies
                             bibendum... --}}
                         </p>
+
+
+                        <output class="description" id="editor">
+
+                        </output>
                         <div class="btns text-center">
                             <a href="{{ route('view.article', $article->slug) }}" title="#" class="btn btn-color"><span>Continue reading</span></a>
                         </div>
