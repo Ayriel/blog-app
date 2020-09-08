@@ -52,13 +52,27 @@ class ArticlesController extends Controller
      */
     public function store(ArticleRequest $request)
     {
+
+        // dd($request->image->file);
         // Manipulación de imagenes
-        if ($request->file('image')) {
-            $file = $request->file('image');
-            $name = 'blogimage' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/images/articles';
-            $file->move($path, $name);
-        }
+            if ($request->file('image')) {
+                $file = $request->file('image');
+                $name = 'blogimage' . time() . '.' . $file->getClientOriginalExtension();
+                $path = public_path() . '/images/articles';
+                $file->move($path, $name);
+
+            }
+
+
+        // $input=$request->all();
+        // $images=array();
+        // if($files=$request->file('images')){
+        //     foreach($files as $file){
+        //         $name=$file->getClientOriginalName();
+        //         $file->move('image',$name);
+        //         $images[]=$name;
+        //     }
+        // }
 
         $article = new Article($request->all());
         $article->user_id = \Auth::user()->id;
@@ -70,6 +84,7 @@ class ArticlesController extends Controller
 
         $image = new Image();
         $image->name=$name;
+
 
         $image->article()->associate($article);
         $image->save();

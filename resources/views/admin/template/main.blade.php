@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/iconfont/icofont.min.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
 
-    {{-- <link rel="stylesheet" href="{{ asset('css/menulogin.css') }}"> --}}
-
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <link rel="stylesheet" href="{{ asset('plugins/trumbowyg/dist/ui/trumbowyg.min.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('plugins/chosen/docsupport/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/chosen/docsupport/prism.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/chosen/chosen.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
 
@@ -57,7 +60,6 @@
 </main>
 
 
-
 <footer id="footer">
     {{-- <div class="logoWrap">
         <div class="container">
@@ -78,22 +80,23 @@
 </footer>
 
 
-
-{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--}}
-
-
 <!-- Import jQuery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
+
+    <script src="{{ asset('plugins/trumbowyg/dist/trumbowyg.js') }}"></script>
+
+    {{-- chosen --}}
+    <script src="{{ asset('plugins/chosen/chosen.jquery.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('plugins/chosen/docsupport/prism.js') }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ asset('plugins/chosen/docsupport/init.js') }}" type="text/javascript" charset="utf-8"></script>
+
+    <script src="{{ asset('js/appArticle.js') }}"></script>
+
+    <script src="{{ asset('js/prueba.js') }}"></script>
 
 
-{{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> --}}
-{{-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>  --}}
-<script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
-
-
-<script src="{{ asset('plugins/trumbowyg/dist/trumbowyg.js') }}"></script>
-<script src="{{ asset('js/appArticle.js') }}"></script>
 
 </body>
 </html>

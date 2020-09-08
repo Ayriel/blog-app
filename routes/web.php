@@ -27,6 +27,7 @@ Route::get('articles/{slug}', 'FrontController@viewArticle')->name('view.article
 
 
 Route::view('/test', 'test');
+Route::view('/test2', 'test2');
 
 
 // Rutas del panel de admin

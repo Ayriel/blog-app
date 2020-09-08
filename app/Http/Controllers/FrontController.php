@@ -10,6 +10,7 @@ use App\Tag;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 use Cviebrock\EloquentSluggable\findBySlugOrFail;
+// use Genert\BBCode\BBCode;
 
 class FrontController extends Controller
 {

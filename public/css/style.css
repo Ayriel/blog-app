@@ -342,3 +342,34 @@ body {
     background: wheat;
     z-index: 1;
 } */
+
+
+/* shosen */
+
+
+.chosen-container-multi {
+    width: 100% !important;
+}
+
+.chosen-choices {
+
+
+    border-radius: 10px ;
+}
+
+
+/* end shosen */
+
+.article-group label{
+    display: block !important;
+}
+
+.article-input {
+    height: 29px;
+    font-size: 13px;
+}
+
+.article-group label {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}

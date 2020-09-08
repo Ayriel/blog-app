@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\ComposerServiceProvider::class,
+        \Genert\BBCode\BBCodeServiceProvider::class,
+
 
 
     ],
@@ -226,6 +228,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'BBCode' => \Genert\BBCode\Facades\BBCode::class,
 
     ],
 

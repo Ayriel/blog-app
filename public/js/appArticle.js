@@ -2,7 +2,9 @@
 
 $(document).ready(function () {
     $('.trumbowyg').trumbowyg({
-        tagsToRemove: ['script', 'link']
+        // hideButtonTexts: true
     });
 
+
+    // $(".chosen-select").chosen()
 });

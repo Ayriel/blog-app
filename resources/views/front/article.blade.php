@@ -85,7 +85,9 @@
                                 <div>{{ $article->created_at->diffForHumans() }}</div>
                             </div>
                             <p class="description drop-cap">
-                                {{ $article->content }}
+                                {{-- {{ $article->content }} --}}
+                            {!! BBCode::convertToHtml($article->content) !!}
+
                                 {{-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan eleifend magna. Curabitur scelerisque vitae augue ac dignissim. Aliquam erat volutpat. Proin in ultricies ligula. Etiam rutrum porta lacus in posuere. vel tortor tempor risus ultricies
                                 bibendum... --}}
                             </p>
