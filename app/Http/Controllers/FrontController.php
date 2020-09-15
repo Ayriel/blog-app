@@ -27,7 +27,10 @@ class FrontController extends Controller
             $articles->category;
             $articles->tags;
             $articles->images;
+            $articles->user;
+            // dd($articles->user);
         });
+
         // dd($date = Carbon::now());
         // dd($article);
         return view('front.index', compact('articles'));

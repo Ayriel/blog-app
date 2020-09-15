@@ -39,7 +39,7 @@
 
                                                     <div class="carousel-item active content-image">
                                                         {{-- <img class="d-block w-100" src="..." alt="First slide"> --}}
-                                                        <img src="{{ asset('images/articles/'. $image->name) }}" alt="#" class="img-responsive article-image-mod d-block w-100 ">
+                                                        <img src="{{ asset('images' . '/' . $article->user->name . '/'. $image->name ) }}" alt="{{ $article->title }}" class="img-responsive article-image-mod d-block w-100 ">
 
                                                     </div>
 
@@ -48,7 +48,7 @@
                                                 @if($key > 0)
                                                     <div class="carousel-item content-image">
                                                         {{-- <img class="d-block w-100" src="..." alt="First slide"> --}}
-                                                        <img src="{{ asset('images/articles/'. $image->name) }}" alt="#" class="img-responsive article-image-mod d-block w-100 ">
+                                                        <img src="{{ asset('images' . '/' . $article->user->name . '/'. $image->name ) }}" alt="{{ $article->title }}" class="img-responsive article-image-mod d-block w-100 ">
 
                                                     </div>
                                                 @endif
