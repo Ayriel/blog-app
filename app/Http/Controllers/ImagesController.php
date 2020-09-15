@@ -26,6 +26,7 @@ class ImagesController extends Controller
 
         $images->each(function($images){
             $images->article;
+            // $images->article->;
             $images->userImage = User::find($images->article->user_id)->name;
 
             // dd($images->userImage);
