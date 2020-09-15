@@ -23,22 +23,22 @@
 
             {!! Form::label('name', 'Nombre') !!}
             {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre Completo']) !!}
-           <h6> {{ $errors->first('name') }}</h6>
+           <h6 class=" text-danger"> {{ $errors->first('name') }}</h6>
         </div>
         <div class="form-group">
             {!! Form::label('email', 'Correo electronico') !!}
             {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'example@gmail.com', 'required']) !!}
-           <h6> {{ $errors->first('email') }}</h6>
+           <h6 class=" text-danger"> {{ $errors->first('email') }}</h6>
         </div>
         <div class="form-group">
             {!! Form::label('password', 'Contraseña') !!}
             {!! Form::password('password', ['class' => 'form-control', 'placeholder' => '*************', 'required']) !!}
-           <h6> {{ $errors->first('password') }}</h6>
+           <h6 class=" text-danger"> {{ $errors->first('password') }}</h6>
         </div>
         <div class="form-group">
             {!! Form::label('type', 'Tipo') !!}
             {!! Form::select('type', ['member' => 'Miembro', 'admin' => 'Administrador'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione..', 'required']) !!}
-           <h6> {{ $errors->first('type') }}</h6>
+           <h6 class=" text-danger"> {{ $errors->first('type') }}</h6>
         </div>
         <div class="form-group">
             {!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}

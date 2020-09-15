@@ -13,6 +13,7 @@
       <tr>
         <th scope="col">#ID</th>
         <th scope="col">Nombre</th>
+        <th scope="col">Cantidad de articulos</th>
         <th scope="col">Acción</th>
       </tr>
     </thead>
@@ -21,8 +22,9 @@
             <tr>
                 <th scope="row">{{ $category->id }}</th>
                 <td>{{ $category->name }}</td>
+                <td>{{ $category->numArticles }}</td>
                 <td>
-                    <a href="{{ route('categories.destroy', $category->id) }}" class="btn btn-danger">
+                    <a href="{{ route('categories.destroy', $category->id) }}" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar la categoría: {{ $category->name }} ?')">
                         {{-- <div class="icon-holder"> --}}
                             <div class="icon">
                                 <i class="icofont-ui-delete">

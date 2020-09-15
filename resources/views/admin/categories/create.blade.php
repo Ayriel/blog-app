@@ -10,7 +10,7 @@
 
         {!! Form::label('name', 'Nombre') !!}
         {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre de la categoria']) !!}
-        <h6> {{ $errors->first('name') }}</h6>
+        <h6 class="text-danger"> {{ $errors->first('name') }}</h6>
     </div>
 
     <div class="form-group">

@@ -104,7 +104,7 @@ class UserController extends Controller
         $user->type = $request->type;
         $user->save();
 
-        flash('El Usuario ' . $user->name . ' a sido editado exitosamente')->important(); //uso de flash para mostrar mensaje.
+        flash('El Usuario ' . "<b>" . $user->name . "</b>" . ' ha sido editado exitosamente')->important(); //uso de flash para mostrar mensaje.
         return redirect()->route('users.index');
 
     }
@@ -120,7 +120,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        flash('El Usuario ' . $user->name . ' a sido eliminado exitosamente')->important(); //uso de flash para mostrar mensaje.
+        flash('El Usuario ' . "<b>" . $user->name . "</b>" . ' ha sido eliminado exitosamente')->important(); //uso de flash para mostrar mensaje.
         return redirect()->route('users.index');
 
     }

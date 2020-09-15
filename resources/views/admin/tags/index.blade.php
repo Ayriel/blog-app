@@ -34,7 +34,7 @@
                 <th scope="row">{{ $tags->id }}</th>
                 <td>{{ $tags->name }}</td>
                 <td>
-                    <a href="{{ route('tags.destroy', $tags->id) }}" class="btn btn-danger">
+                    <a href="{{ route('tags.destroy', $tags->id) }}" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar el tag: {{ $tags->name }} ?')">
                         {{-- <div class="icon-holder"> --}}
                             <div class="icon">
                                 <i class="icofont-ui-delete">

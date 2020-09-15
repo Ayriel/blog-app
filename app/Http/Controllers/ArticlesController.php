@@ -52,50 +52,48 @@ class ArticlesController extends Controller
      */
     public function store(ArticleRequest $request)
     {
+        // dd("hola s");
 
-        // dd($request->image->file);
         // Manipulación de imagenes
             if ($request->file('image')) {
-                $file = $request->file('image');
-                $name = 'blogimage' . time() . '.' . $file->getClientOriginalExtension();
-                $path = public_path() . '/images/articles';
-                $file->move($path, $name);
 
+                $article = new Article($request->all());
+                $article->user_id = \Auth::user()->id;
+                $article->save();
+                $article->tags()->sync($request->tags);
+                foreach ($request->image as $key => $value) {
+
+                    // dd($request->file('image'));
+
+                    $file = $request->file('image')[$key];
+
+                    // $name = 'blogimage' . time() . '.' . $file->getClientOriginalExtension();
+                    $name = 'blogimage' . $file->getClientOriginalName();
+                    $path = public_path() . '/images/articles';
+                    $file->move($path, $name);
+
+                    $image = new Image();
+                    $image->name=$name;
+                    $image->article()->associate($article);
+                    $image->save();
+                }
             }
 
 
-        // $input=$request->all();
-        // $images=array();
-        // if($files=$request->file('images')){
-        //     foreach($files as $file){
-        //         $name=$file->getClientOriginalName();
-        //         $file->move('image',$name);
-        //         $images[]=$name;
-        //     }
+        // $article = new Article($request->all());
+        // $article->user_id = \Auth::user()->id;
+        // $article->save();
+        //     // dd($nameImages);
+        // $article->tags()->sync($request->tags);
+
+        // $image = new Image();
+        // foreach ($nameImages as $key => $value) {
+            // $image->name=$nameImages[$key];
+            // $image->article()->associate($article);
+            // $image->save();
         // }
-
-        $article = new Article($request->all());
-        $article->user_id = \Auth::user()->id;
-        $article->save();
-
-
-
-        $article->tags()->sync($request->tags);
-
-        $image = new Image();
-        $image->name=$name;
-
-
-        $image->article()->associate($article);
-        $image->save();
-
-        // dd($article );
         flash('Se ha creado el articulo ' . "<b>".$article->title."</b>" . ' de forma exitosamente!!')->success()->important();
-        // return view('admin.articles.index');
         return redirect()->route('articles.index');
-
-
-        // return redirect()->route('articles.index');
     }
 
     /**
@@ -156,7 +154,7 @@ class ArticlesController extends Controller
         $article = Article::find($id);
         $article->delete();
 
-        flash('El articulo ' . '<b>' . $article->name  . '</b>' . ' ha sido eliminado exitosamente')->important(); //uso de flash para mostrar mensaje.
+        flash('El articulo ' . '<b>' . $article->title  . '</b>' . ' ha sido eliminado exitosamente')->important(); //uso de flash para mostrar mensaje.
         return redirect()->route('articles.index');
     }
 }

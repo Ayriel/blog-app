@@ -5,15 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/iconfont/icofont.min.css') }}">
-
-
-    <link rel="stylesheet" href="{{ asset('plugins/trumbowyg/dist/ui/trumbowyg.min.css') }}">
-
+    {{-- chosen --}}
     <link rel="stylesheet" href="{{ asset('plugins/chosen/docsupport/style.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/chosen/docsupport/prism.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/chosen/chosen.css') }}">
+
+
+    {{-- CSS BOOTSTRAP --}}
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
+    {{-- END CSS BOOTSTRAP --}}
+
+
+    {{-- UPLOAD IMAGE --}}
+
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    {{-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="{{ asset('plugins/uploaderImage/dist/imageuploadify.min.css') }}" rel="stylesheet">
+
+    {{--END UPLOAD IMAGE --}}
+
+
+{{-- iconfont --}}
+    <link rel="stylesheet" href="{{ asset('plugins/iconfont/icofont.min.css') }}">
+
+{{-- trumbowyg --}}
+    <link rel="stylesheet" href="{{ asset('plugins/trumbowyg/dist/ui/trumbowyg.css') }}">
+
 
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -33,17 +51,18 @@
     {{-- BODY --}}
     <div class="container-fluid min-vh">
 
-            <div class="row mt-2 min-vh">
+            <div class="row mt-2 min-v">
                 <div class="col-md-7 mx-auto ">
                     <div class="card-main">
 
                         @section('det')
                             <div class="card-head">
-                                @include('flash::message')
                                 <h3>
                                     @yield('title', 'Default')
                                 </h3>
                             </div>
+                            @include('flash::message')
+
                         @show
 
                         @yield('content')
@@ -51,10 +70,11 @@
                     </div>
 
                 </div>
-                @yield('images')
+
 
             </div>
 
+            @yield('images')
     </div>
 
 </main>
@@ -81,10 +101,19 @@
 
 
 <!-- Import jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="{{ asset('plugins/jquery/jquery.js') }}"></script>
+
+    {{-- BOOTSTRAP --}}
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
 
+    {{-- UPLOAD IMAGE --}}
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ asset('plugins/uploaderImage/dist/imageuploadify.min.js') }}"></script>
+    <script src="{{ asset('plugins/uploaderImage/dist/app.js') }}"></script>
+    {{--END UPLOAD IMAGE --}}
+
+    {{-- TRUMBOWYG --}}
     <script src="{{ asset('plugins/trumbowyg/dist/trumbowyg.js') }}"></script>
 
     {{-- chosen --}}
@@ -95,6 +124,9 @@
     <script src="{{ asset('js/appArticle.js') }}"></script>
 
     <script src="{{ asset('js/prueba.js') }}"></script>
+
+
+
 
 
 

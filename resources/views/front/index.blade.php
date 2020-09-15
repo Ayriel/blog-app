@@ -30,14 +30,14 @@
                         <a href="{{ route('view.article', $article->slug) }}" title="#">
                             {{-- @foreach ($article->images  as $image) --}}
 
-                            <div id="carouselExampleControls{{ $article->title }}" class="carousel slide" data-ride="carousel">
+                            <div id="carouselControls{{ $article->slug }}" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
 
                                             @foreach ($article->images   as $key => $image)
                                                     {{-- {{ dd($key) }} --}}
                                                 @if ($key == 0)
 
-                                                    <div class="carousel-item active">
+                                                    <div class="carousel-item active content-image">
                                                         {{-- <img class="d-block w-100" src="..." alt="First slide"> --}}
                                                         <img src="{{ asset('images/articles/'. $image->name) }}" alt="#" class="img-responsive article-image-mod d-block w-100 ">
 
@@ -46,7 +46,7 @@
                                                 @endif
 
                                                 @if($key > 0)
-                                                    <div class="carousel-item">
+                                                    <div class="carousel-item content-image">
                                                         {{-- <img class="d-block w-100" src="..." alt="First slide"> --}}
                                                         <img src="{{ asset('images/articles/'. $image->name) }}" alt="#" class="img-responsive article-image-mod d-block w-100 ">
 
@@ -64,11 +64,11 @@
                                 @if (count($article->images) > 1)
 
 
-                                        <a class="carousel-control-prev" href="#carouselExampleControls{{ $article->title }}" role="button" data-slide="prev">
+                                        <a class="carousel-control-prev" href="#carouselControls{{ $article->slug }}" role="button" data-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span class="sr-only">Previous</span>
                                         </a>
-                                        <a class="carousel-control-next" href="#carouselExampleControls{{ $article->title }}" role="button" data-slide="next">
+                                        <a class="carousel-control-next" href="#carouselControls{{ $article->slug }}" role="button" data-slide="next">
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                             <span class="sr-only">Next</span>
                                         </a>
@@ -85,9 +85,9 @@
                             <a href="{{ route('view.article', $article->slug) }}" title="#">{{ $article->title }}</a>
                         </h3>
                         <div class="info">
-                            <div>
+                            {{-- <div>
                                 <span class="date">March 26, <span data-current-year></span></span>
-                            </div>
+                            </div> --}}
                             <div>{{ $article->created_at->diffForHumans() }}</div>
                         </div>
                         <div class="description-1 d-none">
@@ -107,15 +107,15 @@
                         <footer class="article-footer">
                             <div class="row ">
                                 <div class="col-sm-12 col-lg-6 tags">
-                                        <a href="#" title="#">{{ $article->category->name . ' -- ' }}</a>
+                                        <a href="#" title="#">{{ $article->category->name . ' - ' }}</a>
                                         @foreach ($article->tags as $item)
                                       {{-- {{  dd($article->tag)}} --}}
                                             <a href="#" title="#">#{{ $item->name }}</a>
                                         @endforeach
                                 </div>
                                 <div class="col-sm-12 col-lg-6 moreInfo">
-                                    <div><span><i class="fa fa-eye"></i> 86</span> Views</div>
-                                    <div><span><i class="fa fa-comments"></i> 36</span> Comments</div>
+                                    {{-- <div><span><i class="fa fa-eye"></i> 86</span> Views</div>
+                                    <div><span><i class="fa fa-comments"></i> 36</span> Comments</div> --}}
                                 </div>
                             </div>
                         </footer>

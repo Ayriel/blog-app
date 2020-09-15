@@ -21,6 +21,10 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories = Category::orderBy('id', 'ASC')->paginate(5);
+        $categories->each(function($categories){
+            $categories->numArticles = $categories->articles->count();
+        });
+
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -80,13 +84,13 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
         $category = Category::find($id);
         $category->name = $request->name;
         $category->save();
 
-        flash('La categoria ' . $category->name . ' a sido editada exitosamente')->important(); //uso de flash para mostrar mensaje.
+        flash('La categoria ' . "<b>" . $category->name . "</b>" . ' ha sido editada exitosamente')->important(); //uso de flash para mostrar mensaje.
         return redirect()->route('categories.index');
     }
 
@@ -101,7 +105,7 @@ class CategoriesController extends Controller
         $category = Category::find($id);
         $category->delete();
 
-        flash('La categoría ' . $category->name . ' ha sido eliminada exitosamente')->important(); //uso de flash para mostrar mensaje.
+        flash('La categoría ' ."<b>" . $category->name . "</b>" . ' ha sido eliminada exitosamente')->important(); //uso de flash para mostrar mensaje.
         return redirect()->route('categories.index');
     }
 }

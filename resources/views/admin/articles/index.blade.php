@@ -6,17 +6,17 @@
 
 <div class="mt-3">
 
-<a href="{{ route('articles.create') }}" class="ml-4 btn btn-info">Registrar nuevo Articulo</a>
+    <a href="{{ route('articles.create') }}" class="ml-4 btn btn-info">Registrar nuevo Articulo</a>
 
-{{-- BUSCADOR DE TAGS --}}
-{!! Form::open(['route' => 'articles.index', 'method' => 'GET', 'class' => 'navbar-form float-right']) !!}
-<div class="form-group d-flex mr-4">
-    {!! Form::text('title', null, ['class' => 'form-control mr-sm-2', 'placeholder' => 'Buscar articulo']) !!}
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</div>
-{!! Form::close() !!}
+    {{-- BUSCADOR DE TAGS --}}
+    {!! Form::open(['route' => 'articles.index', 'method' => 'GET', 'class' => 'navbar-form float-right']) !!}
+        <div class="form-group d-flex mr-4">
+            {!! Form::text('title', null, ['class' => 'form-control mr-sm-2', 'placeholder' => 'Buscar articulo']) !!}
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
+    {!! Form::close() !!}
 
-{{-- FIN BUSCADOR DE TAGS --}}
+    {{-- FIN BUSCADOR DE TAGS --}}
 
 </div>
 <table class="table">
@@ -38,7 +38,7 @@
                 <td>{{ $article->user->name }}</td>
 
                 <td>
-                    <a href="{{ route('articles.destroy', $article->id) }}" class="btn btn-danger">
+                    <a href="{{ route('articles.destroy', $article->id) }}" class="btn btn-danger" onclick="return confirm('Seguro que deseas eliminar el articulo: {{ $article->title }} ?')">
 
                         <div class="icon">
                                 <i class="icofont-ui-delete">

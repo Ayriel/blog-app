@@ -10,6 +10,7 @@ body {
 .pagination {
     margin-right: auto;
     margin-left: auto;
+    margin-top: 15px;
 }
 
 .table {
@@ -21,7 +22,15 @@ body {
 }
 
 .card-image {
-    min-width: 197px !important;
+    width: 294px !important;
+    height: 269px;
+    margin-top: 18px;
+
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+.card-body {
+    padding: 0 !important;
 }
 
 .borde {
@@ -104,8 +113,14 @@ body {
     margin-top: 15px;
 } */
 
+.content-image{
+    height: 490px;
+    width: inherit;
+}
+
 .article-image-mod {
     width: 100%;
+    height: inherit;
 }
 
 .article-box {
@@ -367,9 +382,43 @@ body {
 .article-input {
     height: 29px;
     font-size: 13px;
+    border-radius: 10px;
 }
+
+
 
 .article-group label {
     font-size: 1.5rem;
     margin-bottom: 15px;
+}
+
+
+
+.glyphicon-remove::before {
+    font-weight: 900;
+    content: "\d7";
+}
+
+
+.size-images {
+    /* width: 100% !important; */
+    height: 165px !important;
+}
+
+
+.alert-title,
+.alert-cat,
+.alert-tag,
+.alert-cont,
+.alert-img {
+    display: none;
+
+}
+
+.byuser {
+    font: 400 14px/20px Roboto,"Helvetica Neue",sans-serif;
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 14px !important;
+    padding-top: 2px;
 }

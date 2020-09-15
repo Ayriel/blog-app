@@ -33,7 +33,7 @@
 
                 </td>
                 <td>
-                    <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-danger" onclick="">
+                    <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-danger " onclick="return confirm('Seguro que deseas eliminar al usuario: {{ $user->name }} ?')">
                         {{-- <div class="icon-holder"> --}}
                             <div class="icon">
                                 <i class="icofont-ui-delete">
@@ -42,7 +42,7 @@
                             </div>
                         {{-- </div> --}}
                     </a>
-                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">
+                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning" onclick="return confirm('Deseas ediar al usuario: {{ $user->name }} ?')">
                         <div class="icon">
                             <i class="icofont-ui-edit">
 

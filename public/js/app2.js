@@ -37,11 +37,9 @@ var description = document.querySelectorAll('.description')
             console.log(result);
 
             description[index].innerHTML = ( result )
-
-
     }
 
 
 
-  });
+});
 
