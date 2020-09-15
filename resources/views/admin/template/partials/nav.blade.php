@@ -12,7 +12,7 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item ">
-                            <a class="nav-link nav-item-color hoverExten" href="{{ route('inicio') }}" tabindex="-1">Inicio</a>
+                            <a class="nav-link nav-item-color hoverExten" href="{{ route('welcome') }}" tabindex="-1">Inicio</a>
                         </li>
                         @if (Auth::user()->type ==="admin")
                             <li class="nav-item ">

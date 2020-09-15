@@ -64,12 +64,13 @@ class ArticlesController extends Controller
                 foreach ($request->image as $key => $value) {
 
                     // dd($request->file('image'));
-
+                    $nameUser = \Auth::user()->name;
+                    // dd($nameUser);
                     $file = $request->file('image')[$key];
 
                     // $name = 'blogimage' . time() . '.' . $file->getClientOriginalExtension();
                     $name = 'blogimage' . $file->getClientOriginalName();
-                    $path = public_path() . '/images/articles';
+                    $path = public_path() . '/images' . '/' . $nameUser;
                     $file->move($path, $name);
 
                     $image = new Image();

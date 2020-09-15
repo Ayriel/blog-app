@@ -18,7 +18,7 @@ Auth::routes();
 Route::get('/', 'FrontController@index')->name('welcome');
 
 // Route::view('/test', 'test');
-Route::get('/inicio', 'HomeController@index')->name('inicio');
+// Route::get('/inicio', 'HomeController@index')->name('inicio');
 
 Route::get('categories/{name}', 'FrontController@searchCategory')->name('search.category');
 Route::get('tags/{name}', 'FrontController@searchTag')->name('search.tags');
